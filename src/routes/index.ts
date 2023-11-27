@@ -3,6 +3,7 @@ import { Router } from 'express';
 import * as HomeController from '../controllers/homeController';
 import * as InfoController from '../controllers/infoController';
 import * as UserController from '../controllers/userController';
+import { createUser } from '../controllers/createUser';
 
 const router = Router();
 
@@ -14,5 +15,7 @@ router.get('/sobre', InfoController.sobre);
 router.get('/nome', UserController.nome);
 router.get('/idade', UserController.idadeForm);
 router.post('/idade-resultado', UserController.idadeAction);
+
+router.post('/novousuario', createUser);
 
 export default router;

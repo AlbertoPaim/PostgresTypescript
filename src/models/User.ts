@@ -10,7 +10,8 @@ interface IUser extends Model {
 export const User = sequelize.define<IUser>('user', {
     id: {
         primaryKey: true,
-        type: DataTypes.INTEGER
+        type: DataTypes.INTEGER,
+        autoIncrement: true
     },
     name: {
 

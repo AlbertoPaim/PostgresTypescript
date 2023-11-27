@@ -1,12 +1,12 @@
 {{>partials/header}}
 
 Opa {{name}} {{lastName}}, tudo bem?
-{{#showOld}}
-    Como vai a vida?
-{{/showOld}}
-{{^showOld}}
-    Beleza?
-{{/showOld}}
+
+<form method="POST" action="/novousuario">
+    <input type="text" name="name" placeholder="Digite seu nome">
+    <input type="text" name="age" placeholder="Digite sua idade">
+    <input type="submit" value="Interir usuário">
+</form>
 
 <hr/>
 <h2>Produtos</h2>
@@ -24,6 +24,14 @@ Opa {{name}} {{lastName}}, tudo bem?
     {{/expensives}}
 </ul>
 
+<hr/>
+<h2>Clientes</h2>
+
+<ul> 
+{{#users}} 
+<li>{{name}} tem {{age}} anos </li>
+{{/users}}
+</ul>
 <hr/>
 
 <ul>
